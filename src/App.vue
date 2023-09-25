@@ -3,25 +3,50 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
- 
-    <div class="wrapper">
+  <div class="background">
+    <h1 class="title">Mracik</h1>
+    <div class="innerItems">
+      <header>
+        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+        <div class="wrapper">
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/contribute">Contribute</RouterLink>
-      </nav>
+          <nav>
+            <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/contribute">Contribute</RouterLink>
+          </nav>
+        </div>
+      </header>
+
+      <RouterView />
     </div>
-  </header>
-
-  <RouterView />
+  </div>
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
+}
+
+.background {
+  background-image: url("@/assets/cloud.svg");
+  background-repeat: no-repeat;
+  width: 95vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.innerItems {
+  color: black;
+  margin-left: 40vw;
+  margin-top: 10vh;
+}
+
+.title{
+  color: black;
+  font-size: 5vw;
+  margin-left: 47%;
+  margin-top: 4vh;
 }
 
 .logo {
